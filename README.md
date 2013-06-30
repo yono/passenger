@@ -1,24 +1,25 @@
 passenger Cookbook
 ==================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+Install passenger gem with rbenv and add conf file to Apache2.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
+#### Platform
+
+This cookbook is tested on Ubuntu 12.04.
+
+- ubuntu
+- debian
+
 #### packages
-- `toaster` - passenger needs toaster to brown your bagel.
+- rbenv : https://github.com/fnichol/chef-rbenv
+- build-essential
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
 
-e.g.
-#### passenger::default
+#### passenger
 <table>
   <tr>
     <th>Key</th>
@@ -27,19 +28,23 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['passenger']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['passenger']['version']</tt></td>
+    <td>String</td>
+    <td>Passeger version</td>
+    <td><tt>4.0.2</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['passenger']['apache2']['conf']</tt></td>
+    <td>String</td>
+    <td>Apache2 configure file</td>
+    <td><tt>/etc/apache2/conf.d/passenger.conf</tt></td>
   </tr>
 </table>
 
 Usage
 -----
-#### passenger::default
-TODO: Write usage instructions for each cookbook.
+#### passenger
 
-e.g.
 Just include `passenger` in your node's `run_list`:
 
 ```json
@@ -53,9 +58,7 @@ Just include `passenger` in your node's `run_list`:
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
 
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write you change
@@ -63,6 +66,3 @@ e.g.
 5. Run the tests, ensuring they all pass
 6. Submit a Pull Request using Github
 
-License and Authors
--------------------
-Authors: TODO: List authors
